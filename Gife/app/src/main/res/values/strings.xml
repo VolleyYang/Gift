@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Gift</string>
+    <string name="column">栏目</string>
+    <!--main-->
+    <string name="home">首页</string>
+    <string name="list">榜单</string>
+    <string name="classify">分类</string>
+    <string name="my">我的</string>
+
+</resources>

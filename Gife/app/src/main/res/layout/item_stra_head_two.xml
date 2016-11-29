@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/stra_head_two_tv_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="品类" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="260dp"
+            android:text="查看全部" />
+    </LinearLayout>
+
+    <fragment.classify.NoScrollGridView
+        android:id="@+id/stra_gv_one"
+        android:background="#f5f2f2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_sift_grid"
+        android:numColumns="2"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"
+        android:padding="1dp"
+        android:scrollbars="none"
+        />
+
+
+
+    <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/stra_head_two_tv_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="风格" />
+    <fragment.classify.NoScrollGridView
+        android:id="@+id/stra_gv_two"
+        android:background="#f5f2f2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_sift_grid"
+        android:numColumns="2"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:scrollbars="none"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"
+        android:padding="1dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/stra_head_two_tv_object"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="栏目" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="260dp"
+            android:text="查看全部" />
+    </LinearLayout>
+    <fragment.classify.NoScrollGridView
+        android:id="@+id/stra_gv_three"
+        android:background="#f5f2f2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_sift_grid"
+        android:numColumns="2"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:scrollbars="none"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"
+        android:padding="1dp"
+        />
+</LinearLayout>

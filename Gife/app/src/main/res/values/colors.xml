@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorNotCheck">#9b9c9b</color>
+    <color name="colorIsCheck">#ec1c0d</color>
+    <!--item_sift-->
+    <color name="item_sift_one">#ffffff</color>
+    <color name="item_sift_two">#000000</color>
+    <color name="item_sift_three">#88cacaca</color>
+    <!--item_sift_head-->
+    <color name="item_sift_head_one">#FFFFFF</color>
+
+
+
+
+</resources>

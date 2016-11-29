@@ -1,0 +1,34 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--item_sift-->
+    <dimen name="item_sift_ten">10dp</dimen>
+    <dimen name="item_sift_fifteen">15dp</dimen>
+    <dimen name="item_sift_fiftyFive">55dp</dimen>
+    <dimen name="item_sift_sixteen_size">16sp</dimen>
+    <dimen name="item_sift_five">5dp</dimen>
+    <dimen name="item_sift_twoHundred">200dp</dimen>
+    <dimen name="item_sift_fiveSp">5sp</dimen>
+    <dimen name="item_sift_twenty">18sp</dimen>
+    <dimen name="item_sift_zeroThree">0.3dp</dimen>
+    <dimen name="item_sift_fourty">40dp</dimen>
+    <dimen name="item_sift_eight">8sp</dimen>
+    <dimen name="item_sift_threety">13sp</dimen>
+    <!--item_sift_head-->
+    <dimen name="item_sift_banner">150dp</dimen>
+    <dimen name="item_sift_grid">190dp</dimen>
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>
