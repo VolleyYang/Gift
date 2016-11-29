@@ -20,6 +20,7 @@
             >
         <ImageView
             android:id="@+id/stra_head_one_pic"
+            android:layout_gravity="center"
             android:layout_width="130dp"
             android:layout_height="75dp"
             android:scaleType="fitXY"

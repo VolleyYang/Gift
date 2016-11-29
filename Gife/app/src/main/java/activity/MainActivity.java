@@ -16,8 +16,6 @@ import fragment.my.MyFragment;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RadioButton rbBtnHome,rbBtnList,rbBtnClassify,rbBtnMy;
-
-    //推送
     @Override
     public int setLayout() {
         return R.layout.activity_main;

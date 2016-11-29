@@ -2,13 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp">
+    <ImageView
+        android:layout_gravity="center"
+        android:src="@mipmap/logo_title_c"
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp" />
+    <EditText
+        android:drawableLeft="@mipmap/abc_ic_search_api_holo_light"
+        android:hint="搜索单品、攻略"
+        android:textSize="15sp"
+        android:cursorVisible="false"
+        android:paddingLeft="40dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/edit_shape"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_gift_send_remind"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+</LinearLayout>
     <android.support.design.widget.TabLayout
         android:id="@+id/tb"
-        android:layout_weight="8"
+        android:layout_marginTop="10dp"
+        android:layout_weight="7"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
         app:tabMode="scrollable"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"/>
