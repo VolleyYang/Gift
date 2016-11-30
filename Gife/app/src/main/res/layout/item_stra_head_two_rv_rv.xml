@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <android.support.v7.widget.CardView
-    android:layout_width="130dp"
+    android:layout_width="@dimen/oneHuanderThree"
     android:layout_height="wrap_content"
-    android:layout_margin="6dp"
-    app:cardCornerRadius="9dp"
-    app:cardElevation="10dp"
+    android:layout_margin="@dimen/six"
+    app:cardCornerRadius="@dimen/nine"
+    app:cardElevation="@dimen/classify_ten"
     >
     <ImageView
     android:id="@+id/stra_head_two_pic"
-    android:layout_width="130dp"
-    android:layout_height="75dp"
+    android:layout_width="@dimen/oneHuanderThree"
+    android:layout_height="@dimen/senventyFive"
     android:scaleType="fitXY"
-    android:layout_marginLeft="10dp"
+    android:layout_marginLeft="@dimen/classify_ten"
     android:src="@mipmap/ic_launcher" />
     </android.support.v7.widget.CardView>
 </LinearLayout>

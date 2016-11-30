@@ -9,38 +9,38 @@
 <LinearLayout
     android:orientation="horizontal"
     android:layout_width="wrap_content"
-    android:layout_height="40dp">
+    android:layout_height="@dimen/fragment_home_forty">
     <ImageView
         android:layout_gravity="center"
         android:src="@mipmap/logo_title_c"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="@dimen/item_sift_fifteen"
         android:layout_width="wrap_content"
-        android:layout_height="25dp" />
+        android:layout_height="@dimen/fragment_home_twentyFive" />
     <EditText
         android:drawableLeft="@mipmap/abc_ic_search_api_holo_light"
-        android:hint="搜索单品、攻略"
-        android:textSize="15sp"
+        android:hint="@string/classify_data"
+        android:textSize="@dimen/classify_fifteenSize"
         android:cursorVisible="false"
-        android:paddingLeft="40dp"
+        android:paddingLeft="@dimen/fragment_home_forty"
         android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="@dimen/classify_twenty"
         android:background="@drawable/edit_shape"
-        android:layout_width="220dp"
+        android:layout_width="@dimen/fragment_home_twoHuanderdTwenty"
         android:layout_height="wrap_content" />
     <ImageView
         android:layout_gravity="center"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="@dimen/item_sift_fifteen"
         android:scaleType="fitXY"
         android:src="@mipmap/icon_gift_send_remind"
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        android:layout_width="@dimen/classify_twenty"
+        android:layout_height="@dimen/classify_twenty" />
 </LinearLayout>
     <android.support.design.widget.TabLayout
         android:id="@+id/tb"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/item_sift_ten"
         android:layout_weight="7"
         app:tabGravity="center"
-        app:tabIndicatorHeight="0dp"
+        app:tabIndicatorHeight="@dimen/fragment_home_zero"
         app:tabMode="scrollable"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"/>

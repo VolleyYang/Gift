@@ -8,24 +8,25 @@
 
     <android.support.design.widget.TabLayout
         android:id="@+id/class_tb"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/classify_oneHundredTwenty"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"/>
     <EditText
         android:drawableLeft="@mipmap/abc_ic_search_api_holo_light"
-        android:hint="搜索单品、攻略"
-        android:textSize="15sp"
+        android:hint="@string/classify_data"
+        android:textSize="@dimen/classify_fifteenSize"
         android:cursorVisible="false"
-        android:paddingLeft="100dp"
+        android:paddingLeft="@dimen/classify_onHundred"
         android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="@dimen/classify_twenty"
+        android:layout_marginTop="@dimen/classify_ten"
+        android:layout_marginRight="@dimen/classify_twenty"
         android:background="@drawable/edit_shape"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <android.support.v4.view.ViewPager
         android:id="@+id/class_vp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/classify_five"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />

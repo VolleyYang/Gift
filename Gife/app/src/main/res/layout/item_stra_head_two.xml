@@ -7,89 +7,89 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginLeft="@dimen/classify_ten"
+        android:layout_marginTop="@dimen/classify_ten">
 
         <TextView
             android:id="@+id/stra_head_two_tv_class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="品类" />
+            android:text="@string/item_stra_pingLei" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="260dp"
-            android:text="查看全部" />
+            android:layout_marginLeft="@dimen/item_sift_twoHuanderSixty"
+            android:text="@string/item_stra_quaerAll" />
     </LinearLayout>
 
     <fragment.classify.NoScrollGridView
         android:id="@+id/stra_gv_one"
-        android:background="#f5f2f2"
+        android:background="@color/item_stra_head_one"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_sift_grid"
         android:numColumns="2"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:horizontalSpacing="1dp"
-        android:verticalSpacing="1dp"
-        android:padding="1dp"
+        android:horizontalSpacing="@dimen/itme_stra_one"
+        android:verticalSpacing="@dimen/itme_stra_one"
+        android:padding="@dimen/itme_stra_one"
         android:scrollbars="none"
         />
 
 
 
     <TextView
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/classify_ten"
+            android:layout_marginLeft="@dimen/classify_ten"
             android:id="@+id/stra_head_two_tv_wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="风格" />
+            android:text="@string/itme_stra_wind" />
     <fragment.classify.NoScrollGridView
         android:id="@+id/stra_gv_two"
-        android:background="#f5f2f2"
+        android:background="@color/item_sift_head_one"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_sift_grid"
         android:numColumns="2"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:scrollbars="none"
-        android:horizontalSpacing="1dp"
-        android:verticalSpacing="1dp"
-        android:padding="1dp"
+        android:horizontalSpacing="@dimen/itme_stra_one"
+        android:verticalSpacing="@dimen/itme_stra_one"
+        android:padding="@dimen/itme_stra_one"
         />
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginLeft="@dimen/classify_ten"
+        android:layout_marginTop="@dimen/classify_ten">
 
         <TextView
             android:id="@+id/stra_head_two_tv_object"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="栏目" />
+            android:text="@string/column" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="260dp"
-            android:text="查看全部" />
+            android:layout_marginLeft="@dimen/item_sift_twoHuanderSixty"
+            android:text="@string/item_stra_quaerAll" />
     </LinearLayout>
     <fragment.classify.NoScrollGridView
         android:id="@+id/stra_gv_three"
-        android:background="#f5f2f2"
+        android:background="@color/item_sift_head_one"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_sift_grid"
         android:numColumns="2"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:scrollbars="none"
-        android:horizontalSpacing="1dp"
-        android:verticalSpacing="1dp"
-        android:padding="1dp"
+        android:horizontalSpacing="@dimen/itme_stra_one"
+        android:verticalSpacing="@dimen/itme_stra_one"
+        android:padding="@dimen/itme_stra_one"
         />
 </LinearLayout>

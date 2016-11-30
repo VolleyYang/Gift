@@ -7,18 +7,18 @@
 
 
     <android.support.v7.widget.CardView
-        android:layout_width="160dp"
+        android:layout_width="@dimen/oneHuanderSix"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        app:cardCornerRadius="9dp"
-        app:cardElevation="10dp"
+        android:layout_margin="@dimen/six"
+        app:cardCornerRadius="@dimen/nine"
+        app:cardElevation="@dimen/classify_ten"
         >
     <ImageView
         android:id="@+id/list_rv_img"
-        android:layout_width="160dp"
+        android:layout_width="@dimen/oneHuanderSix"
         android:layout_gravity="center"
         android:scaleType="fitXY"
-        android:layout_height="190dp"
+        android:layout_height="@dimen/oneHuanderNine"
 
          />
     </android.support.v7.widget.CardView>
@@ -27,21 +27,19 @@
         android:id="@+id/list_tv_dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="5dp"
-        android:text="这个年纪的我们"
-        android:textColor="#050505"
-        android:textSize="15sp" />
+        android:layout_marginLeft="@dimen/thirteen"
+        android:layout_marginTop="@dimen/item_sift_five"
+        android:textColor="@color/rvColor"
+        android:textSize="@dimen/classify_fifteenSize" />
 
     <TextView
         android:id="@+id/list_tv_name"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="5dp"
-        android:text="这个年纪的我们"
-        android:textColor="#999999"
-        android:textSize="15sp" />
+        android:layout_height="@dimen/thirtyFive"
+        android:layout_marginLeft="@dimen/thirteen"
+        android:layout_marginTop="@dimen/item_sift_five"
+        android:textColor="@color/rvColorTwo"
+        android:textSize="@dimen/classify_fifteenSize" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -51,21 +49,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="13dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="@dimen/thirteen"
+            android:layout_marginTop="@dimen/item_sift_five"
             android:text="¥"
-            android:textColor="#f20d0d"
-            android:textSize="15sp" />
+            android:textColor="@color/rvColorThree"
+            android:textSize="@dimen/item_sift_fifteen" />
 
         <TextView
             android:id="@+id/list_tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="13dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="@dimen/thirteen"
+            android:layout_marginTop="@dimen/item_sift_five"
             android:text="25"
-            android:textColor="#f20d0d"
-            android:textSize="15sp" />
+            android:textColor="@color/rvColorThree"
+            android:textSize="@dimen/classify_fifteenSize" />
     </LinearLayout>
 
 </LinearLayout>

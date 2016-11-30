@@ -19,4 +19,6 @@ public class StaticClass {
     public static final String CLASSIFYSTRA = "http://api.liwushuo.com/v2/columns?limit=20&offset=0";
     //分类攻略品类,风格,对象接口
     public static final String CLASSIFYTWO = "http://api.liwushuo.com/v2/channel_groups/all";
+    //单品 (listView与listView联动)接口
+    public static final String SINGLE= "http://api.liwushuo.com/v2/item_categories/tree";
 }

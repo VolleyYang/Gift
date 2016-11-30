@@ -7,4 +7,20 @@
     <string name="classify">分类</string>
     <string name="my">我的</string>
 
+    <!--fragment_classify-->
+    <string name="classify_data">搜索单品、攻略</string>
+    <!--item_stra_head_two-->
+    <string name="item_stra_pingLei">品类</string>
+    <string name="item_stra_quaerAll">查看全部</string>
+    <string name="itme_stra_wind">风格</string>
+    <!--fragment_list-->
+    <string name="fragment_list">礼物榜</string>
+   <!--fragment_my-->
+    <string name="num">+86</string>
+    <string name="phoneNum">输入手机号</string>
+    <string name="sms">短信验证码</string>
+    <string name="getSms">获取验证码</string>
+    <string name="login">登入</string>
+    <string name="passWord">使用密码登入</string>
+    <string name="loginQQ">使用社交软件登入</string>
 </resources>

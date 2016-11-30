@@ -11,6 +11,13 @@
     <color name="item_sift_three">#88cacaca</color>
     <!--item_sift_head-->
     <color name="item_sift_head_one">#FFFFFF</color>
+    <color name="item_stra_head_one">#f5f2f2</color>
+    <color name="backgroud">#FFFFFF</color>
+    <color name="myColor">#88f7f1f7</color>
+    <!--item_list_rv-->
+    <color name="rvColor">#050505</color>
+    <color name="rvColorTwo">#999999</color>
+    <color name="rvColorThree">#f20d0d</color>
 
 
 

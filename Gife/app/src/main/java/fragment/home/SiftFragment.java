@@ -1,5 +1,6 @@
 package fragment.home;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,6 +41,7 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
 
     private ArrayList<String> pics= new ArrayList<>();;
     private HomeListViewAdapter adapter;
+    private int id;
 
     @Override
     public int setLayout() {
@@ -100,6 +102,8 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
             public void successListener(BannerBean data) {
                 for (int i = 0; i < data.getData().getBanners().size(); i++) {
                     pics.add(data.getData().getBanners().get(i).getImage_url());
+                    id = data.getData().getBanners().get(i).getTarget_id();
+                    Log.d("SiftFragment", "id:" + id);
                 }
                 //轮播图
                 bannerImg();
@@ -130,6 +134,12 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
         banner.setDelayTime(2000);
         //设置指示器位置(当banner模式中有指示器时)
         banner.setIndicatorGravity(BannerConfig.CENTER);
+        banner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         //banner设置方法全部调用完毕时最后调用
         banner.start();
     }

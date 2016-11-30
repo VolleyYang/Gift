@@ -8,24 +8,24 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp">
+        android:layout_marginLeft="@dimen/classify_ten"
+        android:layout_marginTop="@dimen/item_sift_fifteen">
 
         <TextView
             android:id="@+id/stra_head_one_tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="栏目" />
+            android:text="@string/column" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="260dp"
-            android:text="查看全部" />
+            android:layout_marginLeft="@dimen/item_sift_twoHuanderSixty"
+            android:text="@string/item_stra_quaerAll" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/classify_ten"
         android:id="@+id/stra_head_rv_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

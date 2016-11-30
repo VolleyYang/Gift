@@ -20,13 +20,16 @@ import bean.home.SixRuleBean;
 public class StraGridViewAdapterOne extends BaseAdapter {
     private StraTwoBean data;
     private Context context;
-
+    private int pos;
 
     public StraGridViewAdapterOne(Context context) {
         this.context = context;
     }
 
-
+    public void setPos(int pos) {
+        this.pos = pos;
+        notifyDataSetChanged();
+    }
 
     public void setData(StraTwoBean data) {
         this.data = data;
@@ -40,7 +43,7 @@ public class StraGridViewAdapterOne extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return data.getData().getChannel_groups().get(0).getChannels().get(position);
+        return data.getData().getChannel_groups().get(pos).getChannels().get(position);
     }
 
     @Override
@@ -59,7 +62,7 @@ public class StraGridViewAdapterOne extends BaseAdapter {
         }else {
             holder = (MyViewHolder) convertView.getTag();
         }
-            Picasso.with(context).load(data.getData().getChannel_groups().get(0).getChannels().get(position).getCover_image_url()).into(holder.img);
+            Picasso.with(context).load(data.getData().getChannel_groups().get(pos).getChannels().get(position).getCover_image_url()).into(holder.img);
         return convertView;
     }
     class MyViewHolder{

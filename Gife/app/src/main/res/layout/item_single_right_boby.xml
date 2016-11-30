@@ -2,29 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
-    <com.youth.banner.Banner
-        android:id="@+id/banner"
-        android:background="@color/item_sift_head_one"
+    <fragment.classify.NoScrollGridView
+        android:id="@+id/single_right_body_gv"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/item_sift_banner" />
-
-    <GridView
-        android:id="@+id/gv"
-        android:background="#f5f2f2"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/item_sift_grid"
+        android:layout_height="wrap_content"
         android:numColumns="3"
         android:gravity="center"
-        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:scrollbars="none"
         android:horizontalSpacing="@dimen/itme_stra_one"
         android:verticalSpacing="@dimen/itme_stra_one"
         android:padding="@dimen/itme_stra_one"
         />
-
-
-
 </LinearLayout>

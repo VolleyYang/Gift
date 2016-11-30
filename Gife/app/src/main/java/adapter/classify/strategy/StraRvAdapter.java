@@ -91,6 +91,7 @@ public class StraRvAdapter extends RecyclerView.Adapter {
                         StraGridViewAdapterTwo SecondAdapter = new StraGridViewAdapterTwo(context);
                         StraGridViewAdapterThree ThirdAdapter = new StraGridViewAdapterThree(context);
                         FirstAdapter.setData(data);
+//                        FirstAdapter.setPos(position);
                         SecondAdapter.setData(data);
                         ThirdAdapter.setData(data);
                         twoViewHolder.oneGridView.setAdapter(FirstAdapter);
