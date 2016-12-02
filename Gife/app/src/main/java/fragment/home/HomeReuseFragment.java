@@ -1,8 +1,10 @@
 package fragment.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.RequestQueue;
@@ -13,6 +15,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.yangshenglong.gife.R;
 
+import activity.siftactivity.SiftLvActivity;
 import adapter.home.HomeLvReuseAdapter;
 import adapter.home.MyFragPagerAdapter;
 import base.BaseFragment;
@@ -24,10 +27,11 @@ import volley.NetListener;
  * Created by yangshenglong on 16/11/23.
  */
 
-public class HomeReuseFragment extends BaseFragment {
+public class HomeReuseFragment extends BaseFragment implements AdapterView.OnItemClickListener {
     private String url;
     private ListView lv;
     private HomeLvReuseAdapter adapter;
+    private SiftReuseBean bean;
 
     @Override
     public int setLayout() {
@@ -54,6 +58,8 @@ public class HomeReuseFragment extends BaseFragment {
 
         //网络解析
         getInternet();
+        //lv点击事件
+        lv.setOnItemClickListener(this);
     }
 
     //Fragment 复用机制
@@ -74,6 +80,7 @@ public class HomeReuseFragment extends BaseFragment {
             public void successListener(SiftReuseBean data) {
                 adapter.setData(data);
                 lv.setAdapter(adapter);
+                bean = data;
             }
 
             @Override
@@ -84,6 +91,13 @@ public class HomeReuseFragment extends BaseFragment {
     }
 
 
-
-
+    //lv点击事件
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String url = bean.getData().getItems().get(position).getContent_url();
+        Log.d("HomeReuseFragment", url);
+        Intent intent = new Intent(getContext(), SiftLvActivity.class);
+        intent.putExtra("key",url);
+        startActivity(intent);
+    }
 }

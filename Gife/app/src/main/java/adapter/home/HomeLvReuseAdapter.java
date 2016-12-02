@@ -65,7 +65,6 @@ public class HomeLvReuseAdapter extends BaseAdapter {
             holder.tvContent.setText(data.getData().getItems().get(position).getIntroduction());
             holder.tvColumnContent.setText(data.getData().getItems().get(position).getColumn().getTitle());
             holder.tvNumber.setText(data.getData().getItems().get(position).getLikes_count() + "");
-        Log.d("HomeLvReuseAdapter", "holder.tvNumber:" + holder.tvNumber);
 
         return convertView;
     }

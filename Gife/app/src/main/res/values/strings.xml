@@ -15,7 +15,7 @@
     <string name="itme_stra_wind">风格</string>
     <!--fragment_list-->
     <string name="fragment_list">礼物榜</string>
-   <!--fragment_my-->
+    <!--fragment_my-->
     <string name="num">+86</string>
     <string name="phoneNum">输入手机号</string>
     <string name="sms">短信验证码</string>

@@ -57,7 +57,7 @@ public class HomeListViewAdapter extends BaseAdapter {
 
         }
         if (data.getData().getItems().get(position).getContent_type() != 1) {
-            Picasso.with(context).load(data.getData().getItems().get(position).getAuthor().getAvatar_url()).error(R.mipmap.ic_launcher).into(holder.imgAuthor);
+            Picasso.with(context).load(data.getData().getItems().get(position).getAuthor().getAvatar_url()).into(holder.imgAuthor);
             holder.tvTitle.setText(data.getData().getItems().get(position).getAuthor().getIntroduction());
             holder.tvColumnContent.setText(data.getData().getItems().get(position).getColumn().getTitle());
             holder.tvAuthor.setText(data.getData().getItems().get(position).getAuthor().getNickname());

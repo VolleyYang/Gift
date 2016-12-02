@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/item_sift_one"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/item_sift_ten"
+    android:paddingLeft="@dimen/item_sift_fifteen"
+    android:paddingRight="@dimen/item_sift_fifteen">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/item_sift_ten"
+        android:paddingTop="@dimen/item_sift_ten">
+
+        <ImageView
+            android:id="@+id/six_img_author"
+            android:layout_width="@dimen/item_sift_fiftyFive"
+            android:layout_height="@dimen/item_sift_fiftyFive" />
+
+        <TextView
+            android:id="@+id/six_tv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_sift_ten"
+            android:layout_marginTop="@dimen/item_sift_ten"
+            android:layout_toRightOf="@id/six_img_author"
+            android:textColor="@color/item_sift_two"
+            android:textSize="@dimen/item_sift_sixteen_size" />
+
+        <TextView
+            android:id="@+id/six_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/six_tv_author"
+            android:layout_marginLeft="@dimen/item_sift_ten"
+            android:layout_marginTop="@dimen/item_sift_five"
+            android:layout_toRightOf="@id/six_img_author"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/six_pic"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_sift_twoHundred"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/six_tv_dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_sift_ten"
+        android:lineSpacingExtra="@dimen/item_sift_fiveSp"
+        android:textColor="@color/item_sift_two"
+        android:textSize="@dimen/item_sift_twenty" />
+
+    <TextView
+        android:id="@+id/six_tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_sift_ten"
+        android:ellipsize="end"
+        android:lineSpacingExtra="@dimen/item_sift_fiveSp"
+        android:maxLines="2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_sift_zeroThree"
+        android:layout_marginTop="@dimen/item_sift_fifteen"
+        android:background="@color/item_sift_three" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_sift_fourty"
+        android:layout_marginTop="@dimen/item_sift_ten"
+        android:paddingBottom="@dimen/item_sift_five">
+
+        <TextView
+            android:id="@+id/six_tv_column"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/column"
+            android:textSize="@dimen/item_sift_eight" />
+
+        <TextView
+            android:id="@+id/six_tv_column_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/item_sift_five"
+            android:layout_toRightOf="@id/six_tv_column"
+            android:textColor="@color/item_sift_two"
+            android:textSize="@dimen/item_sift_threety" />
+
+        <TextView
+            android:id="@+id/six_number_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

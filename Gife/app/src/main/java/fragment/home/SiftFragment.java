@@ -17,9 +17,13 @@ import com.yangshenglong.gife.R;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
+import com.youth.banner.listener.OnBannerClickListener;
 
 import java.util.ArrayList;
 
+import activity.siftactivity.SiftActivity;
+import activity.siftactivity.SiftLvActivity;
+import activity.siftactivity.SixActivity;
 import adapter.home.GridViewAdapter;
 import adapter.home.HomeListViewAdapter;
 import base.BaseFragment;
@@ -39,9 +43,15 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
     private GridView gridView;
 
 
-    private ArrayList<String> pics= new ArrayList<>();;
+    private ArrayList<String> pics = new ArrayList<>();
+    ;
     private HomeListViewAdapter adapter;
-    private int id;
+    private String id;
+    private int i;
+    private BannerBean bean;
+    private Intent intent;
+    private SixRuleBean sixRuleBean;
+    private SiftBean siftBean;
 
     @Override
     public int setLayout() {
@@ -64,6 +74,7 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
 
         adapter = new HomeListViewAdapter(getContext());
 
+        bean = new BannerBean();
         //轮播图解析网络数据
         bannerInternet();
 
@@ -72,6 +83,17 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
 
         //六宫格网络解析
         sixRuleInternet();
+
+        //ListView 点击事件
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String lvBean = siftBean.getData().getItems().get(position).getContent_url();
+                intent = new Intent(getContext(), SiftLvActivity.class);
+                intent.putExtra("lvKey",lvBean);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -85,6 +107,7 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
                 GridViewAdapter gridAdapter = new GridViewAdapter(getContext());
                 gridAdapter.setData(data);
                 gridView.setAdapter(gridAdapter);
+                sixRuleBean = data;
             }
 
             @Override
@@ -100,11 +123,13 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
         NetHelper.MyRequest(bannerUrl, BannerBean.class, new NetListener<BannerBean>() {
             @Override
             public void successListener(BannerBean data) {
-                for (int i = 0; i < data.getData().getBanners().size(); i++) {
+                for (i = 0; i < data.getData().getBanners().size(); i++) {
                     pics.add(data.getData().getBanners().get(i).getImage_url());
-                    id = data.getData().getBanners().get(i).getTarget_id();
-                    Log.d("SiftFragment", "id:" + id);
+
+                    bean = data;
                 }
+
+
                 //轮播图
                 bannerImg();
             }
@@ -134,9 +159,19 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
         banner.setDelayTime(2000);
         //设置指示器位置(当banner模式中有指示器时)
         banner.setIndicatorGravity(BannerConfig.CENTER);
-        banner.setOnClickListener(new View.OnClickListener() {
+        banner.setOnBannerClickListener(new OnBannerClickListener() {
             @Override
-            public void onClick(View v) {
+            public void OnBannerClick(int position) {
+                intent = new Intent(getContext(), SiftActivity.class);
+
+                if (bean != null) {
+
+                    id = bean.getData().getBanners().get(position - 1).getTarget_id() + "";
+                    Log.d("SiftFragment", id);
+                }
+                intent.putExtra("id", id);
+
+                startActivity(intent);
 
             }
         });
@@ -152,6 +187,7 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
             public void successListener(SiftBean data) {
                 adapter.setData(data);
                 listView.setAdapter(adapter);
+                siftBean = data;
             }
 
             @Override
@@ -165,5 +201,10 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+        String url = sixRuleBean.getData().getSecondary_banners().get(position).getTarget_url();
+        Log.d("SiftFragment", url);
+        intent = new Intent(getContext(), SixActivity.class);
+        intent.putExtra("url",url);
+        startActivity(intent);
     }
 }
