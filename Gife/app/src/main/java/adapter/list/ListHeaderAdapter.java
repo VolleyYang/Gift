@@ -1,6 +1,7 @@
 package adapter.list;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,17 +12,22 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 import com.yangshenglong.gife.R;
 
+import activity.listactivity.ListSecondAty;
 import bean.list.ListRvBean;
+import port.ListRvOnClick;
 
 /**
  * Created by yangshenglong on 16/11/26.
  */
 
-public class ListHeaderAdapter extends RecyclerView.Adapter {
+public class ListHeaderAdapter extends RecyclerView.Adapter  {
 
     private Context context;
     private ListRvBean data;
     private View view;
+    private ListRvAdapter rvAdapter;
+    private String  numId;
+
 
     public ListHeaderAdapter(Context context) {
         this.context = context;
@@ -31,6 +37,10 @@ public class ListHeaderAdapter extends RecyclerView.Adapter {
 
         this.data = data;
         notifyDataSetChanged();
+    }
+
+    public void setNumId(String numId) {
+        this.numId = numId;
     }
 
     @Override
@@ -69,11 +79,24 @@ public class ListHeaderAdapter extends RecyclerView.Adapter {
                 break;
             case 1:
                 TwoViewHolder twoHolder = (TwoViewHolder) holder;
+                final String i= data.getData().getItems().get(position).getId()+"";
                 GridLayoutManager manager = new GridLayoutManager(context,2);
                 twoHolder.rv.setLayoutManager(manager);
-                ListRvAdapter rvAdapter = new ListRvAdapter(context,1);
+                rvAdapter = new ListRvAdapter(context,1);
                 rvAdapter.setData(data);
                 twoHolder.rv.setAdapter(rvAdapter);
+
+                //接口回调
+                rvAdapter.setOnClick(new ListRvOnClick() {
+                    @Override
+                    public void MyOnClick(int position) {
+                        Intent intent  = new Intent(context, ListSecondAty.class);
+                        intent.putExtra("numId",i);
+                        context.startActivity(intent);
+
+
+                    }
+                });
                 break;
         }
 
@@ -83,6 +106,8 @@ public class ListHeaderAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return 2;
     }
+
+
 
     class OneViewHolder extends RecyclerView.ViewHolder{
         private ImageView  img;

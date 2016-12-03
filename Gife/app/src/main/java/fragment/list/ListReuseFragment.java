@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import com.android.volley.RequestQueue;
@@ -32,6 +33,7 @@ public class ListReuseFragment extends BaseFragment {
     private ListRvBean bean;
     private RecyclerView recyclerView;
     private ListHeaderAdapter adapter;
+    private String name;
 
     @Override
     public int setLayout() {
@@ -46,14 +48,17 @@ public class ListReuseFragment extends BaseFragment {
     public void initData() {
         Bundle bundle = getArguments();
 
-            String name = bundle.get("key").toString();
+        name = bundle.get("key").toString();
             url = "http://api.liwushuo.com/v2/ranks_v3/ranks/" +
                     name + "?limit=20&offset=0";
 
 
         //RecyclerView网络解析
         getInternet();
+
+
     }
+
 
 
     //RecyclerView网络解析
@@ -61,11 +66,15 @@ public class ListReuseFragment extends BaseFragment {
         NetHelper.MyRequest(url, ListRvBean.class, new NetListener<ListRvBean>() {
             @Override
             public void successListener(ListRvBean data) {
+
                 adapter = new ListHeaderAdapter(getContext());
                 adapter.setData(data);
+                adapter.setNumId(name);
                 recyclerView.setAdapter(adapter);
                 LinearLayoutManager manager = new LinearLayoutManager(getContext());
                 recyclerView.setLayoutManager(manager);
+
+
             }
 
             @Override
@@ -73,6 +82,7 @@ public class ListReuseFragment extends BaseFragment {
 
             }
         });
+
     }
 
     public static ListReuseFragment newInstance(int position) {

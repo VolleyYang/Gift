@@ -64,7 +64,9 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
 
         view = View.inflate(getContext(), R.layout.item_sift_head, null);
         gridView = (GridView) view.findViewById(R.id.gv);
+        //添加头布局
         listView.addHeaderView(view);
+
         //六宫格点击事件
         gridView.setOnItemClickListener(this);
     }

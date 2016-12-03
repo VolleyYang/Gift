@@ -2,6 +2,7 @@ package adapter.list;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import com.squareup.picasso.Picasso;
 import com.yangshenglong.gife.R;
 
 import bean.list.ListRvBean;
+import port.ListRvOnClick;
 
 /**
  * Created by yangshenglong on 16/11/25.
@@ -21,13 +23,20 @@ public class ListRvAdapter extends RecyclerView.Adapter<ListRvAdapter.ListViewHo
     private static ListRvBean data;
     private Context context;
     int pot;
+    private ListRvOnClick onClick;
 
     public ListRvAdapter(Context context,int pot) {
         this.context = context;
         this.pot = pot;
     }
 
+
+    public void setOnClick(ListRvOnClick onClick) {
+        this.onClick = onClick;
+    }
+
     public void setData(ListRvBean data) {
+
         this.data = data;
     }
 
@@ -39,11 +48,19 @@ public class ListRvAdapter extends RecyclerView.Adapter<ListRvAdapter.ListViewHo
     }
 
     @Override
-    public void onBindViewHolder(ListViewHolder holder, int position) {
+    public void onBindViewHolder(final ListViewHolder holder, final int position) {
         Picasso.with(context).load(data.getData().getItems().get(position).getCover_image_url()).into(holder.rvImg);
         holder.tvDp.setText(data.getData().getItems().get(position).getShort_description());
         holder.tvName.setText(data.getData().getItems().get(position).getName());
         holder.tvPrice.setText(data.getData().getItems().get(position).getPrice());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int checkPos = holder.getAdapterPosition();
+                onClick.MyOnClick(checkPos);
+            }
+        });
 
     }
 
@@ -51,6 +68,8 @@ public class ListRvAdapter extends RecyclerView.Adapter<ListRvAdapter.ListViewHo
     public int getItemCount() {
         return data.getData().getItems().size();
     }
+
+
 
     class ListViewHolder extends RecyclerView.ViewHolder{
         private ImageView rvImg;
