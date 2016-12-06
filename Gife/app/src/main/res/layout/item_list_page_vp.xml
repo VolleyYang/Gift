@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/item_sift_one"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list_second_single_rv"
+
+    <ImageView
+        android:id="@+id/vp_nmb"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher" />
 </LinearLayout>

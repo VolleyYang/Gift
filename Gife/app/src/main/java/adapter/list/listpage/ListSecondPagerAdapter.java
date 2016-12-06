@@ -1,4 +1,4 @@
-package adapter.list.secondpage;
+package adapter.list.listpage;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

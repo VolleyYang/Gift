@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <android.support.v4.view.ViewPager
@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"/>
     <TextView
+        android:layout_marginTop="15dp"
         android:id="@+id/list_page_tv_sdp"
         android:layout_weight="1"
         android:text="萌宠中的实力派"
@@ -16,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
+        android:layout_marginTop="15dp"
         android:id="@+id/list_page_tv_name"
         android:layout_weight="1"
         android:text="I-Mu幻响 小吉创意蓝牙音箱"
@@ -24,37 +26,50 @@
         android:layout_height="wrap_content" />
     <LinearLayout
         android:layout_weight="1"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:text="¥"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="180dp"
+            android:layout_marginLeft="155dp"
             android:layout_height="wrap_content" />
         <TextView
             android:text="128"
+            android:layout_gravity="center"
+            android:id="@+id/list_page_tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
+        android:layout_marginTop="15dp"
         android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:layout_gravity="center"
         android:layout_height="wrap_content">
         <TextView
             android:text="❤"
-            android:layout_marginLeft="180dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="155dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:text="346"
+            android:layout_gravity="center"
+            android:id="@+id/list_page_tv_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <TextView
+        android:layout_marginTop="15dp"
         android:id="@+id/list_page_tv_dp"
         android:layout_weight="1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

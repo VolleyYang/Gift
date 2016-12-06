@@ -1,17 +1,20 @@
 package fragment.list;
 
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.ListView;
 
 import com.android.volley.VolleyError;
 import com.yangshenglong.gife.R;
 
 import activity.listactivity.ListSecondAty;
-import adapter.list.secondpage.ListSecondLvAdapter;
+import adapter.list.listpage.ListPageRvAdapter;
 import base.BaseFragment;
-import bean.list.ListSecondPageBean;
+import bean.list.ListPageItemOneBean;
+import bean.list.ListPageRvBean;
+import bean.list.ListRvBean;
 import volley.NetHelper;
 import volley.NetListener;
 
@@ -19,11 +22,13 @@ import volley.NetListener;
 /**
  * Created by yangshenglong on 16/12/2.
  */
+//榜单详情页-----单品
 
 public class ListSecondSingleFragment extends BaseFragment {
-    private ListView lv;
+
     private String id;
     private String url;
+    private RecyclerView recyclerView;
 
     @Override
     public int setLayout() {
@@ -32,7 +37,7 @@ public class ListSecondSingleFragment extends BaseFragment {
 
     @Override
     public void initView(View view) {
-        lv = (ListView) view.findViewById(R.id.list_second_single_lv);
+        recyclerView = (RecyclerView) view.findViewById(R.id.list_second_single_rv);
     }
 
     @Override
@@ -42,7 +47,8 @@ public class ListSecondSingleFragment extends BaseFragment {
 
 
         url = "http://api.liwushuo.com/v2/items/" +
-                id + "/recommend?num=20&post_num=5";
+                id ;
+
         Log.d("ListSecondSingleFragmen", url);
         //解析
         getInternet();
@@ -50,12 +56,14 @@ public class ListSecondSingleFragment extends BaseFragment {
 
     //解析
     private void getInternet() {
-        NetHelper.MyRequest(url, ListSecondPageBean.class, new NetListener<ListSecondPageBean>() {
+        NetHelper.MyRequest(url, ListPageItemOneBean.class, new NetListener<ListPageItemOneBean>() {
             @Override
-            public void successListener(ListSecondPageBean data) {
-                ListSecondLvAdapter adapter = new ListSecondLvAdapter(getContext());
+            public void successListener(ListPageItemOneBean data) {
+                ListPageRvAdapter adapter = new ListPageRvAdapter(getContext());
                 adapter.setData(data);
-                lv.setAdapter(adapter);
+                recyclerView.setAdapter(adapter);
+                LinearLayoutManager manager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+                recyclerView.setLayoutManager(manager);
             }
 
             @Override

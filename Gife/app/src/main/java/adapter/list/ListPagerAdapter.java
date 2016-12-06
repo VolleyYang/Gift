@@ -41,6 +41,7 @@ public class ListPagerAdapter extends FragmentPagerAdapter {
 
     public static String getMessage(int position){
         return title.getData().getRanks().get(position).getId()+ "";
+
     }
 
 

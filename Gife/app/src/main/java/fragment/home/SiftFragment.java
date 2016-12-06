@@ -90,7 +90,7 @@ public class SiftFragment extends BaseFragment implements AdapterView.OnItemClic
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String lvBean = siftBean.getData().getItems().get(position).getContent_url();
+                String lvBean = siftBean.getData().getItems().get(position-1).getContent_url();
                 intent = new Intent(getContext(), SiftLvActivity.class);
                 intent.putExtra("lvKey",lvBean);
                 startActivity(intent);

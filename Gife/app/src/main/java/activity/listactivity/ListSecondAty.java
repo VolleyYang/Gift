@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.yangshenglong.gife.R;
 
@@ -13,7 +14,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 
-import adapter.list.secondpage.ListSecondPagerAdapter;
+import adapter.list.listpage.ListSecondPagerAdapter;
 import fragment.list.ListSecondDetailsFragment;
 import fragment.list.ListSecondSingleFragment;
 
@@ -48,6 +49,7 @@ public class ListSecondAty extends AppCompatActivity {
         intent = getIntent();
         id = intent.getStringExtra("numId");
 
+        Log.d("ListSecondAty", id);
     }
     public static String sendId(){
         return id;

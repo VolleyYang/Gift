@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,17 +80,18 @@ public class ListHeaderAdapter extends RecyclerView.Adapter  {
                 break;
             case 1:
                 TwoViewHolder twoHolder = (TwoViewHolder) holder;
-                final String i= data.getData().getItems().get(position).getId()+"";
-                GridLayoutManager manager = new GridLayoutManager(context,2);
-                twoHolder.rv.setLayoutManager(manager);
                 rvAdapter = new ListRvAdapter(context,1);
                 rvAdapter.setData(data);
                 twoHolder.rv.setAdapter(rvAdapter);
+                GridLayoutManager manager = new GridLayoutManager(context,2);
+                twoHolder.rv.setLayoutManager(manager);
 
                 //接口回调
                 rvAdapter.setOnClick(new ListRvOnClick() {
                     @Override
                     public void MyOnClick(int position) {
+                        final String i= data.getData().getItems().get(position).getId()+"";
+                        Log.d("ListHeaderAdapter", i);
                         Intent intent  = new Intent(context, ListSecondAty.class);
                         intent.putExtra("numId",i);
                         context.startActivity(intent);
