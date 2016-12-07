@@ -24,8 +24,8 @@ public class ListSecondAty extends AppCompatActivity {
     private ViewPager viewPager;
     private ArrayList<Fragment> data;
     private Intent intent;
-    private EventBus bus;
     private static String id;
+    private static String url;
 
 
     @Override
@@ -49,10 +49,14 @@ public class ListSecondAty extends AppCompatActivity {
         intent = getIntent();
         id = intent.getStringExtra("numId");
 
-        Log.d("ListSecondAty", id);
+        //详情--webView
+        url = intent.getStringExtra("url");
     }
     public static String sendId(){
         return id;
+    }
+    public static String sendUrl(){
+        return url;
     }
 
 

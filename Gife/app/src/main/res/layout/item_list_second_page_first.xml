@@ -4,8 +4,14 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <TextView
+        android:text="精品攻略推荐"
+        android:textSize="13sp"
+        android:layout_marginLeft="140dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list_second_page_first_rv"
-        android:layout_width="match_parent"
+        android:layout_width="375dp"
         android:layout_height="wrap_content" />
 </LinearLayout>

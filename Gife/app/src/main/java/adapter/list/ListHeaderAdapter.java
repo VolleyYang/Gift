@@ -27,7 +27,6 @@ public class ListHeaderAdapter extends RecyclerView.Adapter  {
     private ListRvBean data;
     private View view;
     private ListRvAdapter rvAdapter;
-    private String  numId;
 
 
     public ListHeaderAdapter(Context context) {
@@ -38,10 +37,6 @@ public class ListHeaderAdapter extends RecyclerView.Adapter  {
 
         this.data = data;
         notifyDataSetChanged();
-    }
-
-    public void setNumId(String numId) {
-        this.numId = numId;
     }
 
     @Override
@@ -91,9 +86,11 @@ public class ListHeaderAdapter extends RecyclerView.Adapter  {
                     @Override
                     public void MyOnClick(int position) {
                         final String i= data.getData().getItems().get(position).getId()+"";
-                        Log.d("ListHeaderAdapter", i);
+                        String url = data.getData().getItems().get(position).getUrl();
+                        Log.d("ListHeaderAdapter", url);
                         Intent intent  = new Intent(context, ListSecondAty.class);
                         intent.putExtra("numId",i);
+                        intent.putExtra("url",url);
                         context.startActivity(intent);
 
 

@@ -9,6 +9,7 @@ import com.youth.banner.loader.ImageLoader;
 /**
  * Created by yangshenglong on 16/11/24.
  */
+//轮播图
 
 public class GlideImageLoader extends ImageLoader {
     @Override

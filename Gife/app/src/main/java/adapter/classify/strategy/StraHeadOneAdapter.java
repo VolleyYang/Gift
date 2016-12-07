@@ -15,6 +15,7 @@ import com.yangshenglong.gife.R;
 import java.util.Date;
 
 import bean.classify.StraOneBean;
+import port.ListRvOnClick;
 
 /**
  * Created by yangshenglong on 16/11/26.
@@ -23,6 +24,7 @@ import bean.classify.StraOneBean;
 public class StraHeadOneAdapter extends RecyclerView.Adapter<StraHeadOneAdapter.OneHeadViewHolder> {
     private Context context;
     private StraOneBean data;
+    private ListRvOnClick onClick;
 
     int pot;
     public StraHeadOneAdapter(Context context,int pot) {
@@ -34,6 +36,10 @@ public class StraHeadOneAdapter extends RecyclerView.Adapter<StraHeadOneAdapter.
         this.data = data;
     }
 
+    public void setOnClick(ListRvOnClick onClick) {
+        this.onClick = onClick;
+    }
+
     @Override
     public OneHeadViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View  view = LayoutInflater.from(context).inflate(R.layout.item_stra_head_one_rv,parent,false);
@@ -42,10 +48,18 @@ public class StraHeadOneAdapter extends RecyclerView.Adapter<StraHeadOneAdapter.
     }
 
     @Override
-    public void onBindViewHolder(OneHeadViewHolder holder, int position) {
+    public void onBindViewHolder(OneHeadViewHolder holder, final int position) {
         holder.tvDp.setText(data.getData().getColumns().get(position).getTitle());
         holder.tvAuthor.setText(data.getData().getColumns().get(position).getAuthor());
         Picasso.with(context).load(data.getData().getColumns().get(position).getBanner_image_url()).into(holder.straImg);
+        //点击事件
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClick.MyOnClick(position);
+            }
+        });
+
     }
 
     @Override

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/item_sift_one"
+    >
+    <ImageView
+        android:id="@+id/part_page_img"
+        android:layout_width="match_parent"
+        android:layout_height="170dp" />
+    <TextView
+        android:id="@+id/part_tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:textSize="20sp"
+        android:text="最佳礼物大赏"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/xin"
+
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/part_tv_title"
+        android:layout_marginLeft="130dp"
+        android:src="@mipmap/ic_action_compact_favourite_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/part_tv_count"
+        android:textSize="15sp"
+        android:text="2008976"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/xin"
+        android:layout_below="@id/part_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="人喜欢"
+        android:layout_below="@id/part_tv_title"
+        android:layout_toRightOf="@id/part_tv_count"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn"
+        android:text="+关注"
+        android:textColor="@color/item_sift_one"
+        android:background="@color/colorIsCheck"
+        android:layout_below="@id/part_tv_count"
+        android:layout_centerHorizontal="true"
+        android:layout_width="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="20dp" />
+    <TextView
+        android:id="@+id/tv"
+        android:text="简介"
+        android:layout_below="@id/btn"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_marginTop="10dp"
+        android:background="@color/item_sift_three"
+        android:layout_below="@id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <TextView
+        android:id="@+id/part_page_dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/tv_line"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+</RelativeLayout>

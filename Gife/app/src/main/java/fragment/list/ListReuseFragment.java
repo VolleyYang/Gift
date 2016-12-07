@@ -70,7 +70,6 @@ public class ListReuseFragment extends BaseFragment {
 
                 adapter = new ListHeaderAdapter(getContext());
                 adapter.setData(data);
-                adapter.setNumId(name);
                 recyclerView.setAdapter(adapter);
                 LinearLayoutManager manager = new LinearLayoutManager(getContext());
                 recyclerView.setLayoutManager(manager);

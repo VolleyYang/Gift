@@ -1,6 +1,7 @@
 package adapter.classify.strategy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,8 +13,10 @@ import android.widget.GridView;
 import com.android.volley.VolleyError;
 import com.yangshenglong.gife.R;
 
+import activity.classifyactivity.ClassifyPagePartAty;
 import bean.classify.StraOneBean;
 import bean.classify.StraTwoBean;
+import port.ListRvOnClick;
 import staticclass.StaticClass;
 import volley.NetHelper;
 import volley.NetListener;
@@ -25,6 +28,7 @@ import volley.NetListener;
 public class StraRvAdapter extends RecyclerView.Adapter {
     private Context context;
     private View view;
+    private StraOneBean getData;
 
 
     public StraRvAdapter(Context context) {
@@ -68,10 +72,22 @@ public class StraRvAdapter extends RecyclerView.Adapter {
                     @Override
                     public void successListener(StraOneBean data) {
                         StraHeadOneAdapter oneAdapter = new StraHeadOneAdapter(context, 0);
+                        getData = data;
                         oneAdapter.setData(data);
                         oneViewHolder.oneRv.setAdapter(oneAdapter);
                         GridLayoutManager manager = new GridLayoutManager(context, 3, LinearLayoutManager.HORIZONTAL, false);
                         oneViewHolder.oneRv.setLayoutManager(manager);
+                        //接口回调
+                        oneAdapter.setOnClick(new ListRvOnClick() {
+                            @Override
+                            public void MyOnClick(int position) {
+                                String id = getData.getData().getColumns().get(position).getId()+"";
+                                Intent intent = new Intent(context, ClassifyPagePartAty.class);
+                                intent.putExtra("key",id);
+                                context.startActivity(intent);
+
+                            }
+                        });
                     }
 
                     @Override
@@ -91,7 +107,6 @@ public class StraRvAdapter extends RecyclerView.Adapter {
                         StraGridViewAdapterTwo SecondAdapter = new StraGridViewAdapterTwo(context);
                         StraGridViewAdapterThree ThirdAdapter = new StraGridViewAdapterThree(context);
                         FirstAdapter.setData(data);
-//                        FirstAdapter.setPos(position);
                         SecondAdapter.setData(data);
                         ThirdAdapter.setData(data);
                         twoViewHolder.oneGridView.setAdapter(FirstAdapter);

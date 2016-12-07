@@ -87,6 +87,7 @@ public class ListPageRvAdapter extends RecyclerView.Adapter {
                 oneViewHolder.tvPrice.setText(data.getData().getPrice());
                 oneViewHolder.tvDp.setText(data.getData().getDescription());
                 oneViewHolder.tvName.setText(data.getData().getName());
+                oneViewHolder.tvCount.setText(data.getData().getFavorites_count()+"");
                 break;
             case 1:
                 final TwoViewHolder twoViewHolder = (TwoViewHolder) holder;
