@@ -49,7 +49,6 @@ public class ListSecondSingleFragment extends BaseFragment {
         url = "http://api.liwushuo.com/v2/items/" +
                 id ;
 
-        Log.d("ListSecondSingleFragmen", url);
         //解析
         getInternet();
     }

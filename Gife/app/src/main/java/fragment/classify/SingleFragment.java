@@ -24,6 +24,8 @@ import volley.NetListener;
 public class SingleFragment extends BaseFragment {
     private ListView leftLv;
     private StickyListHeadersListView rightLv;
+    private SingleRightAdapter rightAdapter;
+
     @Override
     public int setLayout() {
         return R.layout.fragment_single;
@@ -43,7 +45,7 @@ public class SingleFragment extends BaseFragment {
             @Override
             public void successListener(SingleBean data) {
                 SingleLeftAdapter adapter = new SingleLeftAdapter(getContext());
-                SingleRightAdapter rightAdapter = new SingleRightAdapter(getContext());
+                rightAdapter = new SingleRightAdapter(getContext());
 
                 rightAdapter.setRightDataHead(data);
                 rightLv.setAdapter(rightAdapter);
@@ -55,6 +57,7 @@ public class SingleFragment extends BaseFragment {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         rightLv.setSelection(position);
+                        rightAdapter.setCheckPos(position);
                     }
                 });
 

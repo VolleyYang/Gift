@@ -28,7 +28,6 @@ public class StraGridViewAdapterOne extends BaseAdapter {
 
     public void setPos(int pos) {
         this.pos = pos;
-        notifyDataSetChanged();
     }
 
     public void setData(StraTwoBean data) {

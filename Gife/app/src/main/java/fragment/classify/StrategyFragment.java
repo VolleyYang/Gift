@@ -33,5 +33,6 @@ public class StrategyFragment extends BaseFragment {
         strategyRv.setAdapter(adapter);
         LinearLayoutManager manager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         strategyRv.setLayoutManager(manager);
+        adapter.notifyDataSetChanged();
     }
 }

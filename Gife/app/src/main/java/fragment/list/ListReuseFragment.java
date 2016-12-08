@@ -90,7 +90,6 @@ public class ListReuseFragment extends BaseFragment {
         Bundle args = new Bundle();
         args.putInt("key",position);
         String message= ListPagerAdapter.getMessage(position).toString();
-        Log.d("ListReuseFragment", message);
         args.putString("key",message);
         ListReuseFragment fragment = new ListReuseFragment();
         fragment.setArguments(args);

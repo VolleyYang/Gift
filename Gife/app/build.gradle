@@ -38,4 +38,5 @@ dependencies {
     //listView 联动依赖
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile files('libs/MobCommons-2016.1107.1809.jar')
 }

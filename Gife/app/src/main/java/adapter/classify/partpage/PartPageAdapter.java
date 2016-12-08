@@ -23,6 +23,9 @@ public class PartPageAdapter extends RecyclerView.Adapter {
     private Context context;
     private PartPageBean data;
     private View view;
+    private static  final int ITEM_TYPE_ONE = 1;
+    private static  final int ITEM_TYPE_TWO = 2;
+
 
     public PartPageAdapter(Context context) {
         this.context = context;
@@ -34,25 +37,24 @@ public class PartPageAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0 ){
-            return 0;
-        }else if (position == 1){
-            return 1;
-        }
-        return 2;
+
+       if (position == 0){
+           return ITEM_TYPE_ONE;
+       }else
+           return ITEM_TYPE_TWO;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder  holder = null;
         switch (viewType){
-            case 0:
+            case ITEM_TYPE_ONE:
                 view = LayoutInflater.from(context).inflate(R.layout.item_part_page_one,parent,false);
                 holder = new OneViewHolder(view);
                 break;
-            case 1:
-                view = LayoutInflater.from(context).inflate(R.layout.item_part_page_two,parent,false);
-                holder = new TwoViewHolder(view);
+            case ITEM_TYPE_TWO:
+                view = LayoutInflater.from(context).inflate(R.layout.item_part_page_below,parent,false);
+                holder = new CheckViewHolder(view);
                 break;
         }
         return holder;
@@ -62,27 +64,26 @@ public class PartPageAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         int item = getItemViewType(position);
         switch (item){
-            case 0:
+            case ITEM_TYPE_ONE:
                 OneViewHolder oneViewHolder = (OneViewHolder) holder;
                 oneViewHolder.tvTitle.setText(data.getData().getTitle());
                 oneViewHolder.tvCount.setText(data.getData().getLikes_count()+"");
                 oneViewHolder.tvDp.setText(data.getData().getDescription());
                 Picasso.with(context).load(data.getData().getCover_image_url()).into(oneViewHolder.img);
                 break;
-            case 1:
-                TwoViewHolder twoViewHolder = (TwoViewHolder) holder;
-                PartPageItemAdapter itemAdapter = new PartPageItemAdapter(context);
-                itemAdapter.setData(data);
-                twoViewHolder.rv.setAdapter(itemAdapter);
-                LinearLayoutManager manager = new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false);
-                twoViewHolder.rv.setLayoutManager(manager);
+            case ITEM_TYPE_TWO:
+                CheckViewHolder checkViewHolder = (CheckViewHolder) holder;
+                checkViewHolder.tvCount.setText(data.getData().getPosts().get(position).getLikes_count()+"");
+                checkViewHolder.tvTitle.setText(data.getData().getPosts().get(position).getTitle());
+                checkViewHolder.tvName.setText(data.getData().getPosts().get(position).getAuthor().getNickname());
+                Picasso.with(context).load(data.getData().getPosts().get(position).getCover_image_url()).into(checkViewHolder.img);
                 break;
         }
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return data!=null?data.getData().getPosts().size():0;
     }
 
     class OneViewHolder extends RecyclerView.ViewHolder{
@@ -96,11 +97,17 @@ public class PartPageAdapter extends RecyclerView.Adapter {
             tvTitle = (TextView) itemView.findViewById(R.id.part_tv_title);
         }
     }
-    class TwoViewHolder extends RecyclerView.ViewHolder{
-        private RecyclerView rv;
-        public TwoViewHolder(View itemView) {
+
+    class CheckViewHolder extends RecyclerView.ViewHolder{
+        private ImageView img;
+        private TextView tvTitle,tvName,tvCount;
+        public CheckViewHolder(View itemView) {
             super(itemView);
-            rv = (RecyclerView) itemView.findViewById(R.id.part_rv);
+            img = (ImageView) itemView.findViewById(R.id.below_img);
+            tvCount = (TextView) itemView.findViewById(R.id.below_count);
+            tvName = (TextView) itemView.findViewById(R.id.below_name);
+            tvTitle = (TextView) itemView.findViewById(R.id.below_title);
         }
     }
+
 }

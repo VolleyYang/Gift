@@ -9,10 +9,10 @@
     android:paddingRight="@dimen/item_sift_fifteen">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/item_sift_ten"
-        android:paddingTop="@dimen/item_sift_ten">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/item_sift_ten"
+    android:paddingTop="@dimen/item_sift_ten">
 
         <ImageView
             android:id="@+id/reuse_img_author"

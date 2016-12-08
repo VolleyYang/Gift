@@ -1,6 +1,7 @@
 package adapter.classify.single;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ public class SingleGvAdapter extends BaseAdapter {
     private Context context;
     private SingleBean data;
     private int pos;
+    private static String id;
 
 
     public SingleGvAdapter(Context context) {
@@ -55,6 +57,7 @@ public class SingleGvAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+
         GvViewHolder holder = null;
         if (convertView==null){
             convertView = LayoutInflater.from(context).inflate(R.layout.item_single_gridview,parent,false);
@@ -65,6 +68,7 @@ public class SingleGvAdapter extends BaseAdapter {
         }
         Picasso.with(context).load(data.getData().getCategories().get(pos).getSubcategories().get(position).getIcon_url()).into(holder.gvImg);
         holder.gvTv.setText(data.getData().getCategories().get(pos).getSubcategories().get(position).getName());
+
         return convertView;
     }
     class GvViewHolder{
@@ -75,4 +79,5 @@ public class SingleGvAdapter extends BaseAdapter {
             gvTv = (TextView) view.findViewById(R.id.single_gv_tv);
         }
     }
+
 }

@@ -5,15 +5,18 @@ import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.android.volley.VolleyError;
 import com.yangshenglong.gife.R;
 
 import activity.classifyactivity.ClassifyPagePartAty;
+import activity.classifyactivity.ClassifyStraAty;
 import bean.classify.StraOneBean;
 import bean.classify.StraTwoBean;
 import port.ListRvOnClick;
@@ -29,6 +32,8 @@ public class StraRvAdapter extends RecyclerView.Adapter {
     private Context context;
     private View view;
     private StraOneBean getData;
+    private StraTwoBean datas;
+    private Intent intent;
 
 
     public StraRvAdapter(Context context) {
@@ -81,9 +86,9 @@ public class StraRvAdapter extends RecyclerView.Adapter {
                         oneAdapter.setOnClick(new ListRvOnClick() {
                             @Override
                             public void MyOnClick(int position) {
-                                String id = getData.getData().getColumns().get(position).getId()+"";
+                                String id = getData.getData().getColumns().get(position).getId() + "";
                                 Intent intent = new Intent(context, ClassifyPagePartAty.class);
-                                intent.putExtra("key",id);
+                                intent.putExtra("key", id);
                                 context.startActivity(intent);
 
                             }
@@ -103,16 +108,47 @@ public class StraRvAdapter extends RecyclerView.Adapter {
                 NetHelper.MyRequest(twoUrl, StraTwoBean.class, new NetListener<StraTwoBean>() {
                     @Override
                     public void successListener(StraTwoBean data) {
+
+                        datas = data;
                         StraGridViewAdapterOne FirstAdapter = new StraGridViewAdapterOne(context);
                         StraGridViewAdapterTwo SecondAdapter = new StraGridViewAdapterTwo(context);
                         StraGridViewAdapterThree ThirdAdapter = new StraGridViewAdapterThree(context);
+
                         FirstAdapter.setData(data);
                         SecondAdapter.setData(data);
                         ThirdAdapter.setData(data);
-                        twoViewHolder.oneGridView.setAdapter(FirstAdapter);
-                        twoViewHolder.twoGridView.setAdapter(SecondAdapter);
-                        twoViewHolder.threeGridView.setAdapter(ThirdAdapter);
 
+                        twoViewHolder.oneGridView.setAdapter(FirstAdapter);
+                        twoViewHolder.twoGridView.setAdapter(FirstAdapter);
+                        twoViewHolder.threeGridView.setAdapter(FirstAdapter);
+
+                        intent = new Intent(context, ClassifyStraAty.class);
+
+                        twoViewHolder.oneGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                String oneId = datas.getData().getChannel_groups().get(0).getChannels().get(position).getId()+"";
+                                intent.putExtra("key", oneId);
+                                context.startActivity(intent);
+                            }
+                        });
+                        twoViewHolder.twoGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                String twoId = datas.getData().getChannel_groups().get(1).getChannels().get(position).getId()+"";
+                                Log.d("StraRvAdapter", twoId);
+                                intent.putExtra("key",twoId);
+                                context.startActivity(intent);
+                            }
+                        });
+                        twoViewHolder.threeGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                String threeId = datas.getData().getChannel_groups().get(2).getChannels().get(position).getId()+"";
+                                intent.putExtra("key",threeId);
+                                context.startActivity(intent);
+                            }
+                        });
                     }
 
                     @Override
@@ -150,5 +186,6 @@ public class StraRvAdapter extends RecyclerView.Adapter {
             twoGridView = (GridView) itemView.findViewById(R.id.stra_gv_two);
             threeGridView = (GridView) itemView.findViewById(R.id.stra_gv_three);
         }
+
     }
 }

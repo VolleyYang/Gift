@@ -1,9 +1,12 @@
 package adapter.classify.single;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +15,7 @@ import com.android.volley.VolleyError;
 import com.squareup.picasso.Picasso;
 import com.yangshenglong.gife.R;
 
+import activity.classifyactivity.SinglePageAty;
 import bean.classify.SingleBean;
 import fragment.classify.NoScrollGridView;
 import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
@@ -27,6 +31,12 @@ public class SingleRightAdapter extends BaseAdapter implements StickyListHeaders
     private Context context;
     private SingleBean rightDataHead;
     private BodyViewHolder bodyViewHolder;
+    private String nmbId;
+    private int checkPos;
+
+    public void setCheckPos(int checkPos) {
+        this.checkPos = checkPos;
+    }
 
     public SingleRightAdapter(Context context) {
         this.context = context;
@@ -58,7 +68,7 @@ public class SingleRightAdapter extends BaseAdapter implements StickyListHeaders
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
-
+       // checkPos =position;
         bodyViewHolder = null;
         if (convertView == null){
             convertView = LayoutInflater.from(context).inflate(R.layout.item_single_right_boby,parent,false);
@@ -70,9 +80,19 @@ public class SingleRightAdapter extends BaseAdapter implements StickyListHeaders
         SingleGvAdapter gvAdapter = new SingleGvAdapter(context);
         gvAdapter.setData(rightDataHead);
 
+
         gvAdapter.setPos(position);
         bodyViewHolder.bodyGv.setAdapter(gvAdapter);
 
+        bodyViewHolder.bodyGv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                nmbId = rightDataHead.getData().getCategories().get(position).getSubcategories().get(i).getId()+"";
+                Intent intent = new Intent(context, SinglePageAty.class);
+                intent.putExtra("key",nmbId);
+                context.startActivity(intent);
+            }
+        });
         return convertView;
     }
 
