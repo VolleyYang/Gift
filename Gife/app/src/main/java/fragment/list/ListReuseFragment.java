@@ -12,6 +12,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.jdsjlzx.interfaces.OnRefreshListener;
+import com.github.jdsjlzx.recyclerview.LRecyclerView;
+import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
+import com.github.jdsjlzx.recyclerview.ProgressStyle;
 import com.google.gson.Gson;
 import com.yangshenglong.gife.R;
 
@@ -30,10 +34,10 @@ import volley.NetListener;
 public class ListReuseFragment extends BaseFragment {
 
     private String url;
-    private ListRvBean bean;
-    private RecyclerView recyclerView;
+    private LRecyclerView lRecyclerView;
     private ListHeaderAdapter adapter;
     private String name;
+    private LRecyclerViewAdapter  lRecyclerViewAdapter;
 
     @Override
     public int setLayout() {
@@ -42,7 +46,8 @@ public class ListReuseFragment extends BaseFragment {
 
     @Override
     public void initView(View view) {
-        recyclerView = (RecyclerView) view.findViewById(R.id.list_rv);
+        lRecyclerView = (LRecyclerView) view.findViewById(R.id.list_rv);
+        lRecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
     }
     @Override
     public void initData() {
@@ -53,7 +58,7 @@ public class ListReuseFragment extends BaseFragment {
                     name + "?limit=20&offset=0";
 
 
-        Log.d("ListReuseFragment", name);
+        Log.d("ListReuseFragment", url);
         //RecyclerView网络解析
         getInternet();
 
@@ -68,13 +73,23 @@ public class ListReuseFragment extends BaseFragment {
             @Override
             public void successListener(ListRvBean data) {
 
+
+                //上拉刷新
                 adapter = new ListHeaderAdapter(getContext());
+                lRecyclerViewAdapter = new LRecyclerViewAdapter(adapter);
                 adapter.setData(data);
-                recyclerView.setAdapter(adapter);
+                lRecyclerView.setAdapter(lRecyclerViewAdapter);
                 LinearLayoutManager manager = new LinearLayoutManager(getContext());
-                recyclerView.setLayoutManager(manager);
+                lRecyclerView.setLayoutManager(manager);
 
 
+                lRecyclerView.setOnRefreshListener(new OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        lRecyclerView.refreshComplete();
+                        lRecyclerViewAdapter.notifyDataSetChanged();
+                    }
+                });
             }
 
             @Override

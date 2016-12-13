@@ -17,4 +17,38 @@
         android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/cb"
+        android:button="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/selector_list_page" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_action_compact_share" />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/rvColorThree"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:text="去天猫购买"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/item_sift_one" />
+
+</LinearLayout>
 </LinearLayout>

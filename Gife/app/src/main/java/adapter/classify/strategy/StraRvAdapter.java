@@ -119,8 +119,8 @@ public class StraRvAdapter extends RecyclerView.Adapter {
                         ThirdAdapter.setData(data);
 
                         twoViewHolder.oneGridView.setAdapter(FirstAdapter);
-                        twoViewHolder.twoGridView.setAdapter(FirstAdapter);
-                        twoViewHolder.threeGridView.setAdapter(FirstAdapter);
+                        twoViewHolder.twoGridView.setAdapter(SecondAdapter);
+                        twoViewHolder.threeGridView.setAdapter(ThirdAdapter);
 
                         intent = new Intent(context, ClassifyStraAty.class);
 

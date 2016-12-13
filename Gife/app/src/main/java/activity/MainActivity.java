@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import com.yangshenglong.gife.R;
 
 import base.BaseActivity;
+import cn.sharesdk.framework.ShareSDK;
 import fragment.classify.ClassifyFragment;
 import fragment.home.HomeFragment;
 import fragment.list.ListFragment;
@@ -31,6 +32,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void initData() {
+        ShareSDK.initSDK(this);
+
+
         rbBtnHome.setOnClickListener(this);
         rbBtnList.setOnClickListener(this);
         rbBtnClassify.setOnClickListener(this);

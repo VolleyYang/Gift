@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_collect_aty"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="activity.listactivity.CollectAty">
+
+    <GridView
+        android:id="@+id/stra_collect_gv"
+        android:background="@color/item_stra_head_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:horizontalSpacing="@dimen/itme_stra_one"
+        android:verticalSpacing="@dimen/itme_stra_one"
+        android:padding="@dimen/itme_stra_one"
+        android:scrollbars="none"
+        />
+</LinearLayout>

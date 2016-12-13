@@ -85,12 +85,21 @@ public class ListHeaderAdapter extends RecyclerView.Adapter  {
                 rvAdapter.setOnClick(new ListRvOnClick() {
                     @Override
                     public void MyOnClick(int position) {
+                        String title =data.getData().getItems().get(position).getName();
+                        String description =data.getData().getItems().get(position).getShort_description();
+                        String  price = data.getData().getItems().get(position).getPrice();
+                        String img = data.getData().getItems().get(position).getCover_image_url();
                         final String i= data.getData().getItems().get(position).getId()+"";
                         String url = data.getData().getItems().get(position).getUrl();
-                        Log.d("ListHeaderAdapter", url);
                         Intent intent  = new Intent(context, ListSecondAty.class);
                         intent.putExtra("numId",i);
                         intent.putExtra("url",url);
+                        //存数据库中
+                        intent.putExtra("title",title);
+                        intent.putExtra("dp",description);
+                        intent.putExtra("price",price);
+                        intent.putExtra("imgUrl",img);
+
                         context.startActivity(intent);
 
 

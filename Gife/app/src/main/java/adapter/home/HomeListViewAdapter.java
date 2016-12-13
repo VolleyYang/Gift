@@ -56,16 +56,16 @@ public class HomeListViewAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
 
         }
-        if (data.getData().getItems().get(position).getContent_type() != 1) {
-        holder.tvColumnContent.setText(data.getData().getItems().get(position).getColumn().getTitle());
+        if (data.getData().getItems().get(position).getContent_type() != 1 && data.getData().getItems().get(position).getId() != 1046846) {
         }
+        holder.tvColumnContent.setText(data.getData().getItems().get(position).getColumn().getTitle());
         Picasso.with(context).load(data.getData().getItems().get(position).getAuthor().getAvatar_url()).into(holder.imgAuthor);
         holder.tvTitle.setText(data.getData().getItems().get(position).getAuthor().getIntroduction());
         holder.tvAuthor.setText(data.getData().getItems().get(position).getAuthor().getNickname());
         Picasso.with(context).load(data.getData().getItems().get(position).getCover_image_url()).into(holder.imgPic);
         holder.tvContent.setText(data.getData().getItems().get(position).getIntroduction());
         holder.tvDp.setText(data.getData().getItems().get(position).getTitle());
-        holder.tvNumber.setText(data.getData().getItems().get(position).getLikes_count()+"");
+        holder.tvNumber.setText(data.getData().getItems().get(position).getLikes_count() + "");
         return convertView;
     }
 
