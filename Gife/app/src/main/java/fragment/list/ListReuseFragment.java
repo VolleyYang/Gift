@@ -51,6 +51,11 @@ public class ListReuseFragment extends BaseFragment {
     }
     @Override
     public void initData() {
+        adapter = new ListHeaderAdapter(getContext());
+        lRecyclerViewAdapter = new LRecyclerViewAdapter(adapter);
+
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        lRecyclerView.setLayoutManager(manager);
         Bundle bundle = getArguments();
 
         name = bundle.get("key").toString();
@@ -75,13 +80,9 @@ public class ListReuseFragment extends BaseFragment {
 
 
                 //上拉刷新
-                adapter = new ListHeaderAdapter(getContext());
-                lRecyclerViewAdapter = new LRecyclerViewAdapter(adapter);
+
                 adapter.setData(data);
                 lRecyclerView.setAdapter(lRecyclerViewAdapter);
-                LinearLayoutManager manager = new LinearLayoutManager(getContext());
-                lRecyclerView.setLayoutManager(manager);
-
 
                 lRecyclerView.setOnRefreshListener(new OnRefreshListener() {
                     @Override

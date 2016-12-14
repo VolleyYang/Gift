@@ -1,6 +1,7 @@
 package adapter.classify.single;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,9 @@ public class SingleLeftAdapter extends BaseAdapter {
     private SingleBean leftData;
     private Context context;
 
+
+
+
     public SingleLeftAdapter(Context context) {
         this.context = context;
     }
@@ -29,9 +33,11 @@ public class SingleLeftAdapter extends BaseAdapter {
         this.leftData = leftData;
     }
 
+
+
     @Override
     public int getCount() {
-        return leftData!=null&&leftData.getData().getCategories().size()>0?leftData.getData().getCategories().size():0;
+        return leftData != null && leftData.getData().getCategories().size() > 0 ? leftData.getData().getCategories().size() : 0;
     }
 
     @Override
@@ -47,19 +53,22 @@ public class SingleLeftAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LeftViewHolder holder = null;
-        if (convertView==null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_single_left,parent,false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_single_left, parent, false);
             holder = new LeftViewHolder(convertView);
             convertView.setTag(holder);
-        }else {
+        } else {
             holder = (LeftViewHolder) convertView.getTag();
         }
         holder.leftTv.setText(leftData.getData().getCategories().get(position).getName());
+
+
         return convertView;
     }
 
-    class LeftViewHolder{
+    class LeftViewHolder {
         private TextView leftTv;
+
         public LeftViewHolder(View view) {
             leftTv = (TextView) view.findViewById(R.id.single_left_tv);
         }

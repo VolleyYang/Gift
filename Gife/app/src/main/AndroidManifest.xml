@@ -66,7 +66,6 @@
         </activity>
         <activity android:name="activity.siftactivity.BannerThirdAty" />
         <activity android:name="activity.siftactivity.SixThirdAty" />
-        <activity android:name="activity.listactivity.CollectAty" />
         <activity android:name="activity.loginaty.LoginAty"></activity>
     </application>
 

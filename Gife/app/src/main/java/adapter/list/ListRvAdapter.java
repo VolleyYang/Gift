@@ -1,6 +1,7 @@
 package adapter.list;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -49,7 +50,7 @@ public class ListRvAdapter extends RecyclerView.Adapter<ListRvAdapter.ListViewHo
 
     @Override
     public void onBindViewHolder(final ListViewHolder holder, final int position) {
-        Picasso.with(context).load(data.getData().getItems().get(position).getCover_image_url()).into(holder.rvImg);
+        Picasso.with(context).load(data.getData().getItems().get(position).getCover_image_url()).config(Bitmap.Config.ARGB_4444).into(holder.rvImg);
         holder.tvDp.setText(data.getData().getItems().get(position).getShort_description());
         holder.tvName.setText(data.getData().getItems().get(position).getName());
         holder.tvPrice.setText(data.getData().getItems().get(position).getPrice());
@@ -66,7 +67,7 @@ public class ListRvAdapter extends RecyclerView.Adapter<ListRvAdapter.ListViewHo
 
     @Override
     public int getItemCount() {
-        return data.getData().getItems().size();
+        return data.getData() != null ? data.getData().getItems().size() : 0;
     }
 
 

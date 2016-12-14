@@ -56,8 +56,9 @@ public class SingleFragment extends BaseFragment {
                 leftLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        rightLv.setSelection(position);
+
                         rightAdapter.setCheckPos(position);
+                        rightLv.setSelection(position);
                     }
                 });
 
@@ -71,13 +72,17 @@ public class SingleFragment extends BaseFragment {
                     @Override
                     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                         leftLv.smoothScrollToPositionFromTop(firstVisibleItem,0);
+
+
+
+
+
                     }
                 });
             }
 
             @Override
             public void errorListener(VolleyError error) {
-
             }
         });
     }

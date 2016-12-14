@@ -2,6 +2,7 @@ package adapter.list;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 import com.yangshenglong.gife.R;
 
@@ -70,8 +72,11 @@ public class ListHeaderAdapter extends RecyclerView.Adapter  {
         int item = getItemViewType(position);
         switch (item){
             case 0:
-                OneViewHolder  oneHolder= (OneViewHolder) holder;
-                Picasso.with(context).load(data.getData().getCover_image()).into(oneHolder.img);
+                if (data != null){
+                    OneViewHolder  oneHolder= (OneViewHolder) holder;
+                    Glide.with(context).load(data.getData().getCover_image()).into(oneHolder.img);
+                }
+
                 break;
             case 1:
                 TwoViewHolder twoHolder = (TwoViewHolder) holder;
