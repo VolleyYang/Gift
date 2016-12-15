@@ -55,6 +55,26 @@
     <dimen name="oneHuander">100dp</dimen>
     <dimen name="oneHuanderThree">130dp</dimen>
     <dimen name="senventyFive">75dp</dimen>
+    <dimen name="tenSeven">17dp</dimen>
 
+    <dimen name="eighty">80dp</dimen>
+    <dimen name="fifty">15dp</dimen>
+    <dimen name="TwoHundredTwo">220dp</dimen>
+    <dimen name="sixty">60dp</dimen>
+    <dimen name="FourtyFive">45dp</dimen>
+    <dimen name="fivety">50dp</dimen>
+    <dimen name="fourteen">14dp</dimen>
+    <dimen name="ninety">90dp</dimen>
+    <dimen name="fiveHuander">500dp</dimen>
+    <dimen name="twentySix">26dp</dimen>
+    <dimen name="twentySeven">27dp</dimen>
+    <dimen name="twoHuander">200dp</dimen>
+    <dimen name="oneHuanderFive">150dp</dimen>
+    <dimen name="thirteeny">13sp</dimen>
+    <dimen name="fourty">40dp</dimen>
+    <dimen name="twoHuanderFivey">250dp</dimen>
+    <dimen name="thirteensp">13sp</dimen>
+    <dimen name="threeSevenFive">375dp</dimen>
+    <dimen name="oneFiveFive">155dp</dimen>
 
 </resources>

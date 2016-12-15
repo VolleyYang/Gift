@@ -7,9 +7,9 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/list_page_vp"
         android:layout_width="match_parent"
-        android:layout_height="250dp"/>
+        android:layout_height="@dimen/twoHuanderFivey"/>
     <TextView
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/item_sift_fifteen"
         android:id="@+id/list_page_tv_sdp"
         android:layout_weight="1"
         android:text="萌宠中的实力派"
@@ -17,8 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:layout_marginTop="15dp"
-        android:textSize="13sp"
+        android:layout_marginTop="@dimen/item_sift_fifteen"
+        android:textSize="@dimen/thirteenSize"
         android:id="@+id/list_page_tv_name"
         android:layout_weight="1"
         android:text="I-Mu幻响 小吉创意蓝牙音箱"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content" />
     <LinearLayout
         android:layout_weight="1"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/item_sift_fifteen"
         android:layout_gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:text="¥"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="155dp"
+            android:layout_marginLeft="@dimen/oneFiveFive"
             android:layout_height="wrap_content" />
         <TextView
             android:text="128"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/item_sift_fifteen"
         android:layout_weight="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
         <TextView
             android:text="❤"
             android:layout_gravity="center"
-            android:layout_marginLeft="155dp"
+            android:layout_marginLeft="@dimen/oneFiveFive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
@@ -66,13 +66,13 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <TextView
-        android:layout_marginTop="15dp"
-        android:textSize="13sp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="@dimen/item_sift_fifteen"
+        android:textSize="@dimen/thirteenSize"
+        android:layout_marginBottom="@dimen/classify_twenty"
         android:id="@+id/list_page_tv_dp"
         android:layout_weight="1"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginLeft="@dimen/fifty"
+        android:layout_marginRight="@dimen/item_sift_fifteen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

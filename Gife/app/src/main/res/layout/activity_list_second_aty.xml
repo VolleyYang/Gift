@@ -26,28 +26,28 @@
         android:button="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginLeft="@dimen/thirty"
+        android:layout_marginTop="@dimen/tenSeven"
         android:background="@drawable/selector_list_page" />
 
     <ImageView
         android:id="@+id/img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="@dimen/item_sift_fourty"
+        android:layout_marginTop="@dimen/classify_twenty"
         android:src="@mipmap/ic_action_compact_share" />
 
     <TextView
-        android:layout_width="80dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="@dimen/eighty"
+        android:layout_height="@dimen/thirty"
+        android:layout_marginLeft="@dimen/oneHuanderSix"
+        android:layout_marginTop="@dimen/item_sift_fifteen"
         android:background="@color/rvColorThree"
         android:gravity="center"
-        android:layout_marginRight="10dp"
-        android:text="去天猫购买"
-        android:layout_marginBottom="10dp"
+        android:layout_marginRight="@dimen/classify_ten"
+        android:text="@string/TianMao"
+        android:layout_marginBottom="@dimen/classify_ten"
         android:textColor="@color/item_sift_one" />
 
 </LinearLayout>

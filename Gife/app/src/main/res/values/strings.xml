@@ -23,4 +23,12 @@
     <string name="login">登入</string>
     <string name="passWord">使用密码登入</string>
     <string name="loginQQ">使用社交软件登入</string>
+    <string name="TianMao">去天猫购买</string>
+    <string name="ShouYe">首页</string>
+    <string name="CeShi">测试</string>
+    <string name="GouWuChe">购物车</string>
+    <string name="DingDan">订单</string>
+    <string name="LiQuan">礼券</string>
+    <string name="GuanZhu">关注</string>
+    <string name="KeFu">客服</string>
 </resources>

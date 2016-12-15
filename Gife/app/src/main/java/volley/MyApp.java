@@ -12,19 +12,19 @@ import GreenDao.DaoSession;
 //切记如何使用!!!!!
     //清单文件中加入自己的App
 public class MyApp extends Application {
-    private static Context mContext;
+    private static Context Context;
 
     private static DaoMaster daoMaster;
     private static DaoSession daoSession;
     @Override
     public void onCreate() {
         super.onCreate();
-        mContext = this;
+        Context = this;
 
     }
     //对外提供一个获取Context对象的方法
     public static Context getmContext() {
-        return mContext;
+        return Context;
     }
 
     //对外提供DaoSession对象

@@ -7,18 +7,18 @@
     tools:context="activity.loginaty.LoginAty">
 
     <TextView
-        android:text="首页"
+        android:text="@string/ShouYe"
         android:textColor="@color/colorIsCheck"
-        android:textSize="15sp"
+        android:textSize="@dimen/classify_fifteenSize"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/item_sift_five"
         android:id="@+id/id_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <ImageView
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/item_sift_fifteen"
+        android:layout_marginTop="@dimen/classify_ten"
         android:src="@mipmap/icon_top_arrow"
         android:id="@+id/img_one"
         android:layout_width="wrap_content"
@@ -27,19 +27,19 @@
         android:src="@mipmap/icon_login_message"
         android:id="@+id/img_two"
         android:layout_toRightOf="@id/img_one"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="@dimen/classify_twenty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/img_three"
         android:src="@mipmap/icon_scan_black"
         android:layout_toRightOf="@id/img_two"
-        android:layout_marginLeft="220dp"
+        android:layout_marginLeft="@dimen/TwoHundredTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
         android:layout_toRightOf="@id/img_three"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="@dimen/classify_twenty"
         android:src="@mipmap/icon_settings_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -47,12 +47,12 @@
         android:id="@+id/img_icon"
         android:src="@mipmap/ic_launcher"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:layout_width="60dp"
-        android:layout_height="60dp" />
+        android:layout_marginTop="@dimen/oneHuander"
+        android:layout_width="@dimen/sixty"
+        android:layout_height="@dimen/sixty" />
     <TextView
         android:id="@+id/tv_name"
-        android:text="测试"
+        android:text="@string/CeShi"
         android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/img_icon"
@@ -62,42 +62,42 @@
         android:id="@+id/img_four"
         android:src="@mipmap/icon_cart"
         android:layout_below="@id/tv_name"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="@dimen/fragment_home_twentyFive"
+        android:layout_marginTop="@dimen/thirty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
         android:layout_below="@id/img_four"
         android:id="@+id/tv_one"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:text="购物车"
+        android:layout_marginLeft="@dimen/thirty"
+        android:layout_marginTop="@dimen/classify_ten"
+        android:text="@string/GouWuChe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/img_five"
         android:layout_below="@id/tv_name"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/thirty"
         android:layout_toRightOf="@id/img_four"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="@dimen/item_sift_fourty"
         android:src="@mipmap/icon_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/tv_two"
         android:layout_below="@id/img_four"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/thirtyFive"
+        android:layout_marginTop="@dimen/classify_ten"
         android:layout_toRightOf="@id/tv_one"
-        android:text="订单"
+        android:text="@string/DingDan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/img_six"
         android:src="@mipmap/icon_coupon"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/thirty"
         android:layout_toRightOf="@id/img_five"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="@dimen/item_sift_fourty"
         android:layout_below="@id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -105,49 +105,49 @@
         android:id="@+id/tv_three"
         android:layout_toRightOf="@id/tv_two"
         android:layout_below="@id/img_four"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="10dp"
-        android:text="礼券"
+        android:layout_marginLeft="@dimen/FourtyFive"
+        android:layout_marginTop="@dimen/classify_ten"
+        android:text="@string/LiQuan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/img_seven"
         android:src="@mipmap/icon_follow"
         android:layout_below="@id/tv_name"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/thirty"
         android:layout_toRightOf="@id/img_six"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="@dimen/item_sift_fourty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/tv_four"
         android:layout_toRightOf="@id/tv_three"
         android:layout_below="@id/img_four"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"
-        android:text="关注"
+        android:layout_marginLeft="@dimen/item_sift_fourty"
+        android:layout_marginTop="@dimen/classify_ten"
+        android:text="@string/GuanZhu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <ImageView
         android:id="@+id/img_eight"
         android:layout_below="@id/tv_name"
         android:src="@mipmap/icon_service"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/thirty"
         android:layout_toRightOf="@id/img_seven"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="@dimen/item_sift_fourty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
         android:layout_toRightOf="@id/tv_four"
         android:layout_below="@id/img_four"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        android:text="客服"
+        android:layout_marginLeft="@dimen/fivety"
+        android:layout_marginTop="@dimen/classify_ten"
+        android:text="@string/KeFu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <GridView
         android:layout_below="@id/tv_two"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/thirty"
         android:id="@+id/collect_gv"
         android:background="@color/item_stra_head_one"
         android:layout_width="match_parent"

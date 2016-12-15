@@ -13,12 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/sift_aty_img"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/item_sift_five"
             android:layout_marginLeft="@dimen/classify_ten"
             android:src="@mipmap/btn_back_black"
-            android:layout_width="14dp"
-            android:layout_height="14dp" />
+            android:layout_width="@dimen/fourteen"
+            android:layout_height="@dimen/fourteen" />
 
         <TextView
             android:text="你的礼物"
@@ -26,11 +25,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageView
-            android:layout_marginTop="5dp"
+            android:id="@+id/sift_aty_img"
+            android:layout_marginTop="@dimen/item_sift_five"
             android:layout_marginLeft="@dimen/oneHuanderThree"
             android:src="@mipmap/ic_action_compact_share"
-            android:layout_width="14dp"
-            android:layout_height="14dp" />
+            android:layout_width="@dimen/fourteen"
+            android:layout_height="@dimen/fourteen" />
     </LinearLayout>
     <ListView
         android:id="@+id/sift_second_lv"

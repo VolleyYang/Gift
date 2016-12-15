@@ -7,5 +7,5 @@
         android:id="@+id/list_rv_header_img"
         android:layout_width="match_parent"
         android:scaleType="fitXY"
-        android:layout_height="150dp" />
+        android:layout_height="@dimen/oneHuanderFive" />
 </LinearLayout>

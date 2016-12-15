@@ -26,7 +26,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="activity.MainActivity">
+        <activity android:name="activity.welcomeaty.WelcomeAty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -66,7 +66,8 @@
         </activity>
         <activity android:name="activity.siftactivity.BannerThirdAty" />
         <activity android:name="activity.siftactivity.SixThirdAty" />
-        <activity android:name="activity.loginaty.LoginAty"></activity>
+        <activity android:name="activity.loginaty.LoginAty" />
+        <activity android:name="activity.MainActivity"></activity>
     </application>
 
 </manifest>
