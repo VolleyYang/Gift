@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by yangshenglong on 16/11/28.
+ * Created by VolleyYang on 16/11/28.
  */
 
 public class GsonRequest<T> extends Request<T> {
