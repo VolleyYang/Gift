@@ -27,6 +27,8 @@ public class MyApp extends Application {
         return Context;
     }
 
+
+
     //对外提供DaoSession对象
     public static DaoMaster getDaoMaster() {
         DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(getmContext(),"Person.db",null);
